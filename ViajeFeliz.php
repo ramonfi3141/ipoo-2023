@@ -108,7 +108,7 @@ public function __toString()
     $str= "Codigo de viaje: ".$this->getCodigoViaje()."\n".
             "Destino: ".$this->getDestino()."\n".
             "Cantidad de pasajeros: ".$this->getCantidadMax() ."\n".
-            "========= Pasajeros ======".$this->mostrarPasajero();
+            "========= Pasajeros ======\n".$this->mostrarPasajero();
 
             return $str;
 }
@@ -161,11 +161,13 @@ public function almacenarViaje($viaje)
 
   array_push($col,$viaje);
 
+  return $col;
   }
-
-
- 
 //===================================================================
+
+
+
+
 
  }
 ?>

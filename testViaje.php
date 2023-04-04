@@ -4,7 +4,7 @@ include "ViajeFeliz.php";
 //Implementar un script testViaje.php que cree una instancia de la clase Viaje y presente un menú que permita cargar la información del viaje, modificar y ver sus datos.
 
 
-$unViaje=new Viaje(022,"rosario",1,[]);
+$unViaje=new Viaje(22,"rosario",1,[]);
 
 
 
@@ -33,24 +33,25 @@ do {
                     echo "=========carga de pasajeros ===========\n";
                     $unViaje->cargarPasajero();
                     $unViaje->almacenarViaje($unViaje);
-                    echo"Otro Viaje?\n";
-                    $r=trim(fgets(STDIN));
-            
+                    
                 break;
             case '2':
-                echo $unViaje->getCodigoViaje(). "\n".
-                     $unViaje->getDestino(). "\n".
-                     $unViaje->getCantidadMax(). "\n".
-                     $unViaje->mostrarPasajero(). "\n";
+                echo "Codigo del Viaje: ". $unViaje->getCodigoViaje(). "\n".
+                    "Destino del Viaje: ".$unViaje->getDestino(). "\n".
+                    "Cantidad maxima de pasajeros: ".$unViaje->getCantidadMax(). "\n".
+                    "Pasajeros : \n".$unViaje->mostrarPasajero(). "\n";
 
 
                 break;
 
             case '3':
                 echo "modificar datos \n";
-                echo "codigo de viaje \n" .$unViaje->setCodigoViaje(trim(fgets(STDIN)));
-                echo "destino:\n " . $unViaje->setDestino(trim(fgets(STDIN)));
-                echo "Cantidad de pasajeros:\n " . $unViaje->setCantidadMax(trim(fgets(STDIN)));
+                echo "codigo de viaje \n";
+                $unViaje->setCodigoViaje(trim(fgets(STDIN)));
+                echo "destino:\n " ;
+                $unViaje->setDestino(trim(fgets(STDIN)));
+                echo "Cantidad de pasajeros:\n " ;
+                $unViaje->setCantidadMax(trim(fgets(STDIN)));
                 $unViaje->cargarPasajero();
                 
                 break;    
